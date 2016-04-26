@@ -1,0 +1,2 @@
+# GscApp
+Android gushici

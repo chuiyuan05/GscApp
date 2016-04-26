@@ -29,6 +29,6 @@ public class MainActivity extends Activity {
             fragmentTransaction.replace(android.R.id.content, pmFragment);
         }
         fragmentTransaction.commit() ;
-
+        new PMFragment();
     }
 }

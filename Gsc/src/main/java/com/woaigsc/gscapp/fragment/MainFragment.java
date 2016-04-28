@@ -22,10 +22,10 @@ public class MainFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static MainFragment newInstance(int index) {
+    public static MainFragment newInstance(int position) {
         MainFragment fragment = new MainFragment();
         Bundle args = new Bundle();
-        args.putInt(TAB_INDEX, index);
+        args.putInt(TAB_INDEX, position);
         fragment.setArguments(args);
         return fragment;
     }

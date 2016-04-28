@@ -13,11 +13,20 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="tablayoutStyle" parent="Base.Widget.Design.TabLayout">
+    <style name="GscTablayout" parent="Base.Widget.Design.TabLayout">
         <item name="tabIndicatorColor">@color/topbar_bg</item>
         <item name="tabSelectedTextColor">@color/topbar_bg</item>
         <item name="tabBackground">@color/white</item>
         <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="GscCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabBackground">@color/tab_bgcolor</item>
+        <item name="tabSelectedTextColor">?android:textColorPrimary</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

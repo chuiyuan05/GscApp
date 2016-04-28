@@ -6,7 +6,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.widget.TableLayout;
 
+import com.woaigsc.gscapp.adapter.SampleFragmentPagerAdapter;
 import com.woaigsc.gscapp.base.BaseActivity;
 import com.woaigsc.gscapp.fragment.MainFragment;
 
@@ -14,7 +16,7 @@ import com.woaigsc.gscapp.fragment.MainFragment;
 public class MainActivity extends BaseActivity {
     private TabLayout mTab ;
     private ViewPager mViewpager ;
-    private FragmentPagerAdapter mAdapter ;
+    private SampleFragmentPagerAdapter mAdapter ;
     private String [] titles ;
     private int [] titleImg ;
 
@@ -34,24 +36,17 @@ public class MainActivity extends BaseActivity {
         titleImg = new int []{R.mipmap.ic_launcher, R.mipmap.ic_launcher,
         R.mipmap.ic_launcher,R.mipmap.ic_launcher};
 
-        mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
-            @Override
-            public Fragment getItem(int position) {
-                return MainFragment.newInstance(position);
-            }
-
-            @Override
-            public int getCount() {
-                return titles.length;
-            }
-
-            @Override
-            public CharSequence getPageTitle(int position) {
-                return titles[position];
-
-            }
-        };
+        mAdapter = new SampleFragmentPagerAdapter(getSupportFragmentManager(), this);
         mViewpager.setAdapter(mAdapter);
         mTab.setupWithViewPager(mViewpager);
+
+        for(int i=0;i<mTab.getTabCount();i++){
+            TabLayout.Tab tab = mTab.getTabAt(i);
+            if(tab!= null){
+                tab.setCustomView(mAdapter.getTabView(i));
+            }
+        }
+
+        mViewpager.setCurrentItem(1);
     }
 }

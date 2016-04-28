@@ -36,7 +36,7 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/gsc_main_tablelayout"
         android:layout_width="match_parent"
-        style="@style/tablayoutStyle"
+        style="@style/GscCustomTabLayout"
         android:layout_height="wrap_content" />
 
 

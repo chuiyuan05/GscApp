@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Gsc/Gsc.iml" filepath="$PROJECT_DIR$/Gsc/Gsc.iml" />
       <module fileurl="file://$PROJECT_DIR$/GscApp.iml" filepath="$PROJECT_DIR$/GscApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/utils/utils.iml" filepath="$PROJECT_DIR$/utils/utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Utils/Utils.iml" filepath="$PROJECT_DIR$/Utils/Utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gsc/app.iml" filepath="$PROJECT_DIR$/Gsc/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Utils/utils.iml" filepath="$PROJECT_DIR$/Utils/utils.iml" />
     </modules>
   </component>
 </project>

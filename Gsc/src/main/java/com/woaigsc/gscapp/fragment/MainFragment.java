@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.woaigsc.gscapp.R;
 
@@ -42,7 +43,12 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        View view= inflater.inflate(R.layout.fragment_main, container, false);
+        TextView tv = (TextView)view.findViewById(R.id.gsc_text);
+        tv.setText("fragment:"+mTabIndex);
+        return  view ;
     }
+
+
 
 }

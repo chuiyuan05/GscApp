@@ -35,7 +35,6 @@ public class MainActivity extends BaseActivity {
         titles = new String []{"g1","g2","g2","g4"};
         titleImg = new int []{R.mipmap.ic_launcher, R.mipmap.ic_launcher,
         R.mipmap.ic_launcher,R.mipmap.ic_launcher};
-
         mAdapter = new SampleFragmentPagerAdapter(getSupportFragmentManager(), this);
         mViewpager.setAdapter(mAdapter);
         mTab.setupWithViewPager(mViewpager);

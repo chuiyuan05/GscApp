@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/screen"
+    android:layout_width="@dimen/actionbar_height"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/actionbar_home"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/actionbar_height"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:visibility="visible"
+        >
+        <ImageViewcd
+            android:id="@+id/actionbar_home_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/actionbar_item_height"
+            android:background="@drawable/"
+            android:padding="0dip"
+            style=""
+            android:visibility="visible"/>
+    </RelativeLayout>
+
+</RelativeLayout>

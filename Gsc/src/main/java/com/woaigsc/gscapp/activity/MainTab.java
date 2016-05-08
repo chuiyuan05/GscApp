@@ -1,5 +1,7 @@
 package com.woaigsc.gscapp.activity;
 
+import android.support.v4.app.Fragment;
+
 import com.woaigsc.gscapp.R;
 import com.woaigsc.gscapp.fragment.CategoryFragment;
 import com.woaigsc.gscapp.fragment.MyInfoFragment;
@@ -9,20 +11,20 @@ import com.woaigsc.gscapp.fragment.RecommendFragment;
  * Created by chuiyuan on 16-5-8.
  */
 public enum  MainTab{
-    RECOMAND(1,R.string.recommend,R.drawable.icon, RecommendFragment.class),
-    CATEGORY(2,R.string.category,R.drawable.icon, CategoryFragment.class),
-    MYINFO(4, R.string.app_name,R.drawable.icon, MyInfoFragment.class);
+    RECOMAND(1,R.string.recommend,R.drawable.icon, RecommendFragment.newInstance()),
+    CATEGORY(2,R.string.category,R.drawable.icon, CategoryFragment.newInstance()),
+    MYINFO(4, R.string.myinfo,R.drawable.icon, MyInfoFragment.newInstance());
 
     private int index ;
     private int resName ;
     private int resIcon;
-    private Class<?> cls ;
+    private Fragment fragment;
 
-    private MainTab(int index, int resName, int resId, Class<?>cls){
+    private MainTab(int index, int resName, int resIcon, Fragment fragment){
         this.index = index;
         this.resIcon = resIcon ;
         this.resName = resName ;
-        this.cls = cls;
+        this.fragment= fragment;
     }
 
     public int getIndex() {
@@ -49,11 +51,11 @@ public enum  MainTab{
         this.resIcon = resIcon;
     }
 
-    public Class<?> getCls() {
-        return cls;
+    public Fragment getFragment() {
+        return fragment;
     }
 
-    public void setCls(Class<?> cls) {
-        this.cls = cls;
+    public void setFragment(Fragment fragment) {
+        this.fragment = fragment;
     }
 }

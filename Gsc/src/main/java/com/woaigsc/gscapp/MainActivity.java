@@ -4,19 +4,19 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 
+import com.woaigsc.gscapp.activity.MainTab;
 import com.woaigsc.gscapp.adapter.SampleFragmentPagerAdapter;
 import com.woaigsc.gscapp.base.BaseActivity;
 import com.woaigsc.mylib.widget.ActionBar;
+import com.woaigsc.mylib.widget.CustomViewPager;
 
 
 public class MainActivity extends BaseActivity {
     private TabLayout mTab ;
-    private ViewPager mViewpager ;
+    private CustomViewPager mViewpager ;
     private ActionBar mActionBar ;
 
     private SampleFragmentPagerAdapter mAdapter ;
-    private String [] titles ;
-    private int [] titleImg ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity {
 
         mTab = (TabLayout)findViewById(R.id.gsc_main_tablelayout);
         //Content, to put Fragment.
-        mViewpager= (ViewPager)findViewById(R.id.gsc_main_viewpager);
+        mViewpager= (CustomViewPager) findViewById(R.id.gsc_main_viewpager);
         mActionBar = (ActionBar)findViewById(R.id.gsc_actionbar);
         mViewpager.setOffscreenPageLimit(4);
         initViews();
@@ -33,10 +33,10 @@ public class MainActivity extends BaseActivity {
 
     private void initViews(){
         mActionBar.setTitle("GscApp");
-        titles = new String []{"g1","g2","g2","g4"};
-        titleImg = new int []{R.mipmap.ic_launcher, R.mipmap.ic_launcher,
-        R.mipmap.ic_launcher,R.mipmap.ic_launcher};
-        mAdapter = new SampleFragmentPagerAdapter(getSupportFragmentManager(), this);
+
+        MainTab [] tabs = MainTab.values() ;
+        mAdapter = new SampleFragmentPagerAdapter(getSupportFragmentManager(), this, tabs);
+        mViewpager.setPagingEnabled(false);
         mViewpager.setAdapter(mAdapter);
         mTab.setupWithViewPager(mViewpager);
 

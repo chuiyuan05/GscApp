@@ -10,40 +10,46 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.woaigsc.gscapp.R;
+import com.woaigsc.gscapp.activity.MainTab;
+import com.woaigsc.gscapp.base.BaseFragment;
 import com.woaigsc.gscapp.fragment.MainFragment;
+import com.woaigsc.mylib.SingletonHolder;
 
 /**
  * Created by chuiyuan on 16-4-28.
  */
 public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
-    final int PAGE_COUNT =4 ;
-    private String tabTitles [] = new String []{"q","w","e","r"};
+
+    private MainTab [] tabs;
     private Context context ;
 
-    public SampleFragmentPagerAdapter(FragmentManager fm ,Context context){
+    public SampleFragmentPagerAdapter(FragmentManager fm ,Context context, MainTab []tabs){
         super(fm);
         this.context = context ;
+        this.tabs = tabs ;
     }
 
     public View getTabView(int position){
         View v = LayoutInflater.from(context).inflate(R.layout.gsc_main_customtab, null);
         TextView tv = (TextView)v.findViewById(R.id.gsc_tab_textView);
-        tv.setText(tabTitles[position]);
+        tv.setText(getPageTitle(position));
         ImageView img = (ImageView)v.findViewById(R.id.gsc_tab_imageView);
+        img.setImageResource(tabs[position].getResIcon());
         return v ;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return MainFragment.newInstance(position);
+        return tabs[position].getFragment();
     }
 
     @Override
     public int getCount() {
-        return PAGE_COUNT;
+        return tabs.length;
     }
+
     @Override
     public CharSequence getPageTitle(int position){
-        return tabTitles[position];
+        return context.getString(tabs[position].getResName());
     }
 }

@@ -10,14 +10,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Gsc" />
-            <option value="$PROJECT_DIR$/Utils" />
+            <option value="$PROJECT_DIR$/../MyLib/Lib" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Gsc" />
-            <option value="$PROJECT_DIR$/Utils" />
+            <option value="$PROJECT_DIR$/../MyLib/Lib" />
           </set>
         </option>
       </GradleProjectSettings>

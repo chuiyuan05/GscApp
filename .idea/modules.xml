@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Gsc/Gsc.iml" filepath="$PROJECT_DIR$/Gsc/Gsc.iml" />
       <module fileurl="file://$PROJECT_DIR$/GscApp.iml" filepath="$PROJECT_DIR$/GscApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Utils/Utils.iml" filepath="$PROJECT_DIR$/Utils/Utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../MyLib/Lib/MyLib.iml" filepath="$PROJECT_DIR$/../MyLib/Lib/MyLib.iml" />
     </modules>
   </component>
 </project>

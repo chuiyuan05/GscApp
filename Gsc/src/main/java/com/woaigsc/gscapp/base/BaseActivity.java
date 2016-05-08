@@ -13,12 +13,12 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        AppManager.getInstance().addActivity(this) ;
+        AppManager.getInstance().finishActivity(this);
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AppManager.getInstance().finishActivity(this);
+        AppManager.getInstance().addActivity(this);
     }
 }

@@ -1,1 +1,3 @@
-include  ':Gsc', ':Utils'
+include  ':Gsc',':MyLib'
+//THIS PATH IS TO BE NOTED.
+project(':MyLib').projectDir = new File('../MyLib/Lib')

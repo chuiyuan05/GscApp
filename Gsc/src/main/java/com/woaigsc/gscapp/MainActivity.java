@@ -2,7 +2,6 @@ package com.woaigsc.gscapp;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 
 import com.woaigsc.gscapp.activity.MainTab;
 import com.woaigsc.gscapp.adapter.SampleFragmentPagerAdapter;

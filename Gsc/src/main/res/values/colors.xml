@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#b4b6b5</color>
+    <color name="colorPrimaryDark">#5c5c60</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="topbar_bg">#3F51B5</color>
+    <color name="topbar_bg">#b4b6b5</color>
     <color name="white">#ffffff</color>
-    <color name="tab_bgcolor">#eeeeee</color>
+    <color name="tab_text_selected">#3d3d3e</color>
+    <color name="tab_bg">#eeeeee</color>
     <color name="gsc_transparent">#00000000</color>
 </resources>
+
+

@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <com.woaigsc.mylib.widget.ActionBar
-        android:id="@+id/actionbar"
-        style="@style/ActionBar">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
+    <com.woaigsc.mylib.widget.ActionBar
+        android:id="@+id/gsc_actionbar"
+        style="@style/ActionBar">
     </com.woaigsc.mylib.widget.ActionBar>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/gsc_main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/gsc_main_tablelayout"
+        android:layout_width="match_parent"
+        style="@style/GscTablayout"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -4,17 +4,17 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.woaigsc.gscapp.R;
 import com.woaigsc.gscapp.entity.Poem;
+import com.woaigsc.gscapp.utils.StringUtils;
 
 /**
  * Created by chuiyuan on 16-5-8.
  */
 public class PoemView extends RelativeLayout{
-    private ScrollView mPoemView ;
+    private RelativeLayout mPoemView ;
     private TextView mTitleTv ;
     private TextView mAuthorTv;
     private TextView mDynastyTv;
@@ -31,8 +31,9 @@ public class PoemView extends RelativeLayout{
     public PoemView(Context context, AttributeSet attrs){
         super(context,attrs);
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        mPoemView = (ScrollView)mInflater.inflate(R.layout.poem_view, null);
+        mPoemView = (RelativeLayout)mInflater.inflate(R.layout.poem_view, null);
         this.addView(mPoemView);
+
         mTitleTv = (TextView)mPoemView.findViewById(R.id.poem_title);
         mAuthorTv = (TextView)mPoemView.findViewById(R.id.poem_author);
         mDynastyTv = (TextView)mPoemView.findViewById(R.id.poem_dynasty);
@@ -59,8 +60,13 @@ public class PoemView extends RelativeLayout{
         mDynastyTv.setText(dynasty);
     }
 
+    /**
+     * content will be split and space will be get ride.
+     * @param content
+     */
     public void setPoemContent(String content){
-        mContentTv.setText(content);
+        //split content.
+        mContentTv.setText(StringUtils.splitContent(content));
     }
 
 

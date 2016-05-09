@@ -4,9 +4,18 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.woaigsc.gscapp.widget.PoemView
-        android:id="@+id/recommend_poemview"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.woaigsc.gscapp.widget.PoemView>
+        android:layout_height="match_parent"
+        android:id="@+id/recommend_scrollview"
+        android:layout_gravity="center_horizontal">
+
+        <com.woaigsc.gscapp.widget.PoemView
+            android:id="@+id/recommend_poemview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.woaigsc.gscapp.widget.PoemView>
+
+    </ScrollView>
 </LinearLayout>

@@ -10,6 +10,7 @@ import com.woaigsc.gscapp.utils.AppManager;
  * Created by chuiyuan on 16-4-27.
  */
 public class BaseActivity extends AppCompatActivity {
+    protected String TAG = this.getClass().getSimpleName() ;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

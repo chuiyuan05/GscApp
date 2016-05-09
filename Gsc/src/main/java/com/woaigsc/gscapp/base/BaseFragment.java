@@ -14,7 +14,7 @@ import com.woaigsc.gscapp.AppContext;
  */
 public class BaseFragment extends Fragment implements BaseFragmentInterface,
         View.OnClickListener{
-
+    protected String TAG = this.getClass().getSimpleName();
     protected LayoutInflater mInflater ;
 
     public AppContext getApplication(){

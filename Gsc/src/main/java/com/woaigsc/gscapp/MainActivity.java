@@ -6,6 +6,7 @@ import android.support.design.widget.TabLayout;
 import com.woaigsc.gscapp.activity.MainTab;
 import com.woaigsc.gscapp.adapter.SampleFragmentPagerAdapter;
 import com.woaigsc.gscapp.base.BaseActivity;
+import com.woaigsc.mylib.SingletonHolder;
 import com.woaigsc.mylib.widget.ActionBar;
 import com.woaigsc.mylib.widget.CustomViewPager;
 
@@ -46,6 +47,13 @@ public class MainActivity extends BaseActivity {
             }
         }
 
-        mViewpager.setCurrentItem(1);
+        mViewpager.setCurrentItem(0);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //destroy all singleton.
+        SingletonHolder.destroy();
     }
 }

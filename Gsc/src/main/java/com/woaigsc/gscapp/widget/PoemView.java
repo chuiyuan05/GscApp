@@ -20,7 +20,7 @@ public class PoemView extends RelativeLayout{
     private TextView mDynastyTv;
     private TextView mContentTv ;
 
-    private LayoutInflater  mInflater ;
+    //private LayoutInflater  mInflater ;
 
     private Poem poem ;
 
@@ -30,7 +30,7 @@ public class PoemView extends RelativeLayout{
 
     public PoemView(Context context, AttributeSet attrs){
         super(context,attrs);
-        mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mPoemView = (RelativeLayout)mInflater.inflate(R.layout.poem_view, null);
         this.addView(mPoemView);
 

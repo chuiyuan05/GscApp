@@ -1,4 +1,4 @@
-package com.woaigsc.gscapp.utils;
+package com.woaigsc.gscapp.app;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,7 @@ import java.util.Stack;
 
 /**
  * Created by chuiyuan on 16-4-27.
+ * Manages Activity.
  */
 public class AppManager {
     private static Stack<Activity> activityStack ;

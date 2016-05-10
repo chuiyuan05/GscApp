@@ -1,4 +1,4 @@
-package com.woaigsc.gscapp.activity;
+package com.woaigsc.gscapp.ui;
 
 import android.support.v4.app.Fragment;
 

@@ -12,26 +12,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/jiangjinjiu_title"
             android:id="@+id/poem_title" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/jiangjinjiu_dynasty"
             android:id="@+id/poem_dynasty" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/jiangjinjiu_author"
             android:id="@+id/poem_author" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="@string/jiangjinjiu_content"
             android:id="@+id/poem_content" />
     </LinearLayout>
 </RelativeLayout>

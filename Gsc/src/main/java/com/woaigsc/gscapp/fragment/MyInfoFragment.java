@@ -26,11 +26,18 @@ public class MyInfoFragment extends BaseFragment {
         return fragment;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //return super.onCreateView(inflater, container, savedInstanceState);
-        View root = inflater.inflate(R.layout.fragment_myinfo,container, false);
-        return root ;
+    protected void findViews(View view) {
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_myinfo;
+    }
+
+    @Override
+    protected void setupViews(Bundle bundle) {
+
     }
 }

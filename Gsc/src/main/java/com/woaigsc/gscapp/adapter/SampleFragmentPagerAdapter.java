@@ -10,10 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.woaigsc.gscapp.R;
-import com.woaigsc.gscapp.activity.MainTab;
-import com.woaigsc.gscapp.base.BaseFragment;
-import com.woaigsc.gscapp.fragment.MainFragment;
-import com.woaigsc.mylib.SingletonHolder;
+import com.woaigsc.gscapp.ui.MainTab;
 
 /**
  * Created by chuiyuan on 16-4-28.

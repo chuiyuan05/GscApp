@@ -4,6 +4,8 @@
     <string name="recommend">tuijian</string>
     <string name="category">fenlei</string>
     <string name="myinfo">wode</string>
+    <string name="tip_double_click_exit">再次点击退出</string>
+    <string name="gsc_loading">loading...</string>
 
     <!--For test TextView -->
     <string name="jiangjinjiu_title">将进酒</string>

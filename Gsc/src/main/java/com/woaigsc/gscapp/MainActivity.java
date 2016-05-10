@@ -2,10 +2,12 @@ package com.woaigsc.gscapp;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.view.KeyEvent;
 
-import com.woaigsc.gscapp.activity.MainTab;
+import com.woaigsc.gscapp.ui.MainTab;
 import com.woaigsc.gscapp.adapter.SampleFragmentPagerAdapter;
 import com.woaigsc.gscapp.base.BaseActivity;
+import com.woaigsc.gscapp.utils.DoubleClickExitHelper;
 import com.woaigsc.mylib.SingletonHolder;
 import com.woaigsc.mylib.widget.ActionBar;
 import com.woaigsc.mylib.widget.CustomViewPager;
@@ -17,6 +19,8 @@ public class MainActivity extends BaseActivity {
     private ActionBar mActionBar ;
 
     private SampleFragmentPagerAdapter mAdapter ;
+
+    private DoubleClickExitHelper mDoubleClickExit ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class MainActivity extends BaseActivity {
 
     private void initViews(){
         mActionBar.setTitle("GscApp");
+        mDoubleClickExit = new DoubleClickExitHelper(this) ;
 
         MainTab [] tabs = MainTab.values() ;
         mAdapter = new SampleFragmentPagerAdapter(getSupportFragmentManager(), this, tabs);
@@ -55,5 +60,16 @@ public class MainActivity extends BaseActivity {
         super.onDestroy();
         //destroy all singleton.
         SingletonHolder.destroy();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            /*if(AppContext.get(AppConfig.KEY_DOUBLE_CLICK_EXIT, true)){
+                return mDoubleClickExit.onKeyDown(keyCode, event) ;
+            }*/
+            return mDoubleClickExit.onKeyDown(keyCode, event) ;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

@@ -9,7 +9,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 
 import com.woaigsc.gscapp.base.BaseActivity;
-import com.woaigsc.gscapp.utils.AppManager;
+import com.woaigsc.gscapp.app.AppManager;
 
 /**
  * Created by chuiyuan on 16-5-5.

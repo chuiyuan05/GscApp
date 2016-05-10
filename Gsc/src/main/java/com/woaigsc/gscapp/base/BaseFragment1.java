@@ -1,5 +1,6 @@
 package com.woaigsc.gscapp.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,19 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.woaigsc.gscapp.AppContext;
-
 /**
- * Created by chuiyuan on 16-5-8.
+ * Created by chuiyuan on 16-5-9.
  */
-public class BaseFragment extends Fragment implements BaseFragmentInterface,
-        View.OnClickListener{
+public abstract class BaseFragment1 extends Fragment
+    implements View.OnClickListener{
     protected String TAG = this.getClass().getSimpleName();
-    protected LayoutInflater mInflater ;
 
-    public AppContext getApplication(){
-        return (AppContext)getActivity().getApplication();
-    }
+    protected Context context ;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,8 +25,10 @@ public class BaseFragment extends Fragment implements BaseFragmentInterface,
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mInflater = inflater;
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View root = inflater.inflate(getLayoutId(),container,false);
+        findViews(root);
+        setupViews(savedInstanceState);
+        return root;
     }
 
     @Override
@@ -43,25 +41,17 @@ public class BaseFragment extends Fragment implements BaseFragmentInterface,
         super.onResume();
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
+    protected abstract int getLayoutId();
 
-    protected int getLayoutId(){
-        return 0;
-    }
+    protected abstract void findViews(View view);
 
-    protected View inflateView(int resId){
-        return mInflater.inflate(resId, null);
-    }
-    @Override
-    public void initView(View view) {
+    protected abstract void setupViews(Bundle bundle);
+
+    protected void setListener(){
 
     }
 
-    @Override
-    public void fetchData() {
+    protected void fetchData(){
 
     }
 

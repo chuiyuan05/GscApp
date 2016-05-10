@@ -10,16 +10,17 @@ import com.android.volley.toolbox.Volley;
 
 /**
  * Created by chuiyuan on 16-5-9.
+ * A wrap of Volley.
  */
-public class VolleySingleton {
+public class HttpSingleton {
     private String TAG = this.getClass().getSimpleName() ;
 
-    private static VolleySingleton instance ;
+    private static HttpSingleton instance ;
     private RequestQueue mRequestQueue ;
     private ImageLoader mImageLoader ;
     private Context mContext ;
 
-    private VolleySingleton(Context context){
+    private HttpSingleton(Context context){
         this.mContext = context ;
         mRequestQueue = getRequestQueue() ;
         mImageLoader = new ImageLoader(mRequestQueue,
@@ -41,11 +42,11 @@ public class VolleySingleton {
      * @param context
      * @return
      */
-    public static VolleySingleton getInstance(Context context){
+    public static HttpSingleton getInstance(Context context){
         if(instance == null){
-            synchronized(VolleySingleton.class){
+            synchronized(HttpSingleton.class){
                 if(instance == null){
-                    instance = new VolleySingleton(context) ;
+                    instance = new HttpSingleton(context) ;
                 }
             }
         }

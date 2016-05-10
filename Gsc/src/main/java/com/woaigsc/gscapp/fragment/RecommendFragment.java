@@ -8,15 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.woaigsc.gscapp.R;
 import com.woaigsc.gscapp.base.BaseFragment;
 import com.woaigsc.gscapp.net.URLConstant;
-import com.woaigsc.gscapp.net.VolleySingleton;
+import com.woaigsc.gscapp.net.HttpSingleton;
 import com.woaigsc.gscapp.widget.PoemView;
 
 /**
@@ -43,7 +41,7 @@ public class RecommendFragment extends BaseFragment {
         //return super.onCreateView(inflater, container, savedInstanceState);
         View root = inflater.inflate(R.layout.fragment_recommend,container, false);
         initView(root);
-        initData();
+        fetchData();
         return root ;
     }
 
@@ -58,7 +56,7 @@ public class RecommendFragment extends BaseFragment {
     }
 
     @Override
-    public void initData() {
+    public void fetchData() {
         Log.d(TAG, "initData");
         String url = URLConstant.SERVER_ADDRESS+"/poem/4";
         StringRequest req = new StringRequest(Request.Method.GET, url,
@@ -73,7 +71,7 @@ public class RecommendFragment extends BaseFragment {
                 error.printStackTrace();
             }
         }) ;
-        VolleySingleton.getInstance(this.getContext()).addToRequestQueue(req);
+        HttpSingleton.getInstance(this.getContext()).addToRequestQueue(req);
 
     }
 

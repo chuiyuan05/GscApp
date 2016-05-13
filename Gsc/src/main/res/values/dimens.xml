@@ -6,4 +6,6 @@
 
     <dimen name="topbar_height">48dp</dimen>
     <dimen name="textsize_20">20sp</dimen>
+
+    <dimen name="global_padding">8dip</dimen>
 </resources>

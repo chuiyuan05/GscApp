@@ -13,7 +13,7 @@
         android:paddingTop="@dimen/global_padding" >
 
         <ImageView
-            android:id="@+id/icon_iv"
+            android:id="@+id/toast_icon_iv"
             android:layout_width="wrap_content"
             android:layout_height="40.0dip"
             android:layout_centerVertical="true"
@@ -22,7 +22,7 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/action_tv"
+            android:id="@+id/toast_action_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -37,20 +37,21 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/title_tv"
+            android:id="@+id/toast_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignWithParentIfMissing="true"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/action_tv"
-            android:layout_toRightOf="@id/icon_iv"
+            android:layout_toLeftOf="@id/toast_action_tv"
+            android:layout_toRightOf="@id/toast_icon_iv"
             android:shadowColor="@android:color/black"
             android:shadowDx="0.0"
             android:shadowDy="-1.0"
             android:shadowRadius="1.0"
             android:textColor="@android:color/white"
             android:textSize="14.0dip"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="this is toast"/>
     </RelativeLayout>
 
 </merge>

@@ -67,4 +67,12 @@ public class BaseActivity extends AppCompatActivity implements DialogControl {
         }
         return null;
     }
+
+    public void showToast(String msg, int icon, int gravity){
+
+    }
+
+    public void showToast(int msgId, int icon, int gravity){
+
+    }
 }

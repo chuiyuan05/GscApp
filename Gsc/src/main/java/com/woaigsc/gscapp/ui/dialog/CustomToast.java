@@ -22,10 +22,9 @@ public class CustomToast {
     private long duration = DURATION_MEDIUM;
 
     private class ToastView extends FrameLayout{
-        private ImageView actionIv ;
+        private ImageView iconImg ;
         private TextView actionTv ;
-        private ImageView msgIv;
-        private TextView msgTv ;
+        private TextView titleTv ;
 
         public ToastView(Context context){
             this(context,null);
@@ -41,9 +40,12 @@ public class CustomToast {
         }
 
         private void initView(){
+            //must be true, due to using merge in layout.
             View root = LayoutInflater.from(getContext()).inflate(
-                    R.layout., this, true);
-
+                    R.layout.toast_view, this, true);
+            iconImg = (ImageView)root.findViewById(R.id.toast_icon_iv);
+            actionTv = (TextView)root.findViewById(R.id.toast_action_tv);
+            titleTv = (TextView)root.findViewById(R.id.toast_title_tv) ;
         }
     }
 }

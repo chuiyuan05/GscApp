@@ -8,4 +8,8 @@
     <dimen name="textsize_20">20sp</dimen>
 
     <dimen name="global_padding">8dip</dimen>
+
+    <!--For PoemView-->
+    <dimen name="poemview_padding">25dip</dimen>
+    <dimen name="poemview_space_height">30dip</dimen>
 </resources>

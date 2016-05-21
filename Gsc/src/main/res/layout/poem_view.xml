@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="@dimen/poemview_padding">
 
     <LinearLayout
         android:orientation="vertical"
@@ -13,25 +14,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/poem_title"
-            android:textSize="18sp"/>
+            android:textSize="30sp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/poemview_space_height"></View>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/poem_dynasty"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/poem_author"
-            android:textSize="18sp"/>
+            android:id="@+id/poem_dynasty_author"
+            android:textSize="22sp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/poemview_space_height"></View>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:id="@+id/poem_content"
-            android:textSize="18sp"/>
+            android:textSize="28sp"/>
     </LinearLayout>
 </RelativeLayout>

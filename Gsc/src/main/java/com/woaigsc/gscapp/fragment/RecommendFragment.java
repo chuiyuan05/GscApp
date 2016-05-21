@@ -54,7 +54,7 @@ public class RecommendFragment extends BaseFragment {
     public void fetchData() {
         Log.d(TAG, "initData");
         showWaitDialog() ;//show wait dialog
-        String url = HttpUtils.selectPoemByIdUrl(10) ;
+        String url = HttpUtils.selectPoemByIdUrl(90) ;
         Request req = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
             @Override

@@ -19,12 +19,11 @@ import com.woaigsc.gscapp.utils.StringUtils;
 public class PoemView extends RelativeLayout
     implements View.OnClickListener{
     private LayoutInflater mInflater ;
-    private Context context ;
+    private Context mContext ;
 
     private RelativeLayout mPoemView ;
     private TextView mTitleTv ;
-    private TextView mAuthorTv;
-    private TextView mDynastyTv;
+    private TextView mDynastyAuthorTv;
     private TextView mContentTv ;
 
     //private LayoutInflater  mInflater ;
@@ -39,14 +38,13 @@ public class PoemView extends RelativeLayout
 
     public PoemView(Context context, AttributeSet attrs){
         super(context,attrs);
-        this.context = context ;
+        this.mContext = context ;
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         mPoemView = (RelativeLayout)mInflater.inflate(R.layout.poem_view, null);
         this.addView(mPoemView);
         mTitleTv = (TextView)mPoemView.findViewById(R.id.poem_title);
-        mAuthorTv = (TextView)mPoemView.findViewById(R.id.poem_author);
-        mDynastyTv = (TextView)mPoemView.findViewById(R.id.poem_dynasty);
+        mDynastyAuthorTv = (TextView)mPoemView.findViewById(R.id.poem_dynasty_author);
         mContentTv = (TextView)mPoemView.findViewById(R.id.poem_content);
 
         TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.PoemView);
@@ -54,17 +52,16 @@ public class PoemView extends RelativeLayout
         a.recycle();
 
         setListeners();
-
+        //Set font for PoemView
         FontHelper.getInstance(context).setFont(mPoemView,FontHelper.FONT_FIRST);
     }
 
     public void setPoem(Poem poem){
-
         this.poem = poem ;
-        mTitleTv.setText(poem.getTitle());
+        mTitleTv.setText(StringUtils.purify(poem.getTitle()));
         mTitleTv.getPaint().setFakeBoldText(true);
-        mAuthorTv.setText(poem.getAuthor());
-        mDynastyTv.setText(poem.getDynasty());
+        mDynastyAuthorTv.setText(StringUtils.purify(
+                "["+poem.getDynasty()+"]"+poem.getAuthor()));
         mContentTv.setText(StringUtils.splitContent(poem.getContent()));
     }
 
@@ -77,11 +74,8 @@ public class PoemView extends RelativeLayout
             case R.id.poem_title:
                 mListener.onTitleClick();
                 break;
-            case R.id.poem_author:
-                mListener.onAuthorClick();
-                break;
-            case R.id.poem_dynasty:
-                mListener.onDynastyClick();
+            case R.id.poem_dynasty_author:
+                mListener.onDynastyAuthorClick();
                 break;
             case R.id.poem_content:
                 mListener.onContentClick();
@@ -91,9 +85,8 @@ public class PoemView extends RelativeLayout
 
     private void setListeners(){
         mTitleTv.setOnClickListener(this);
-        mAuthorTv.setOnClickListener(this);
+        mDynastyAuthorTv.setOnClickListener(this);
         mContentTv.setOnClickListener(this);
-        mDynastyTv.setOnClickListener(this);
     }
 
     /**
@@ -101,8 +94,7 @@ public class PoemView extends RelativeLayout
      */
     public interface onPoemViewClickListener{
         void onTitleClick();
-        void onAuthorClick();
-        void onDynastyClick();
+        void onDynastyAuthorClick();
         void onContentClick();
     }
 

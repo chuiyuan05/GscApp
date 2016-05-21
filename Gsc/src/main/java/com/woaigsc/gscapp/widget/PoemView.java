@@ -1,8 +1,10 @@
 package com.woaigsc.gscapp.widget;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -13,7 +15,8 @@ import com.woaigsc.gscapp.utils.StringUtils;
 /**
  * Created by chuiyuan on 16-5-8.
  */
-public class PoemView extends RelativeLayout{
+public class PoemView extends RelativeLayout
+    implements View.OnClickListener{
     private RelativeLayout mPoemView ;
     private TextView mTitleTv ;
     private TextView mAuthorTv;
@@ -23,6 +26,8 @@ public class PoemView extends RelativeLayout{
     //private LayoutInflater  mInflater ;
 
     private Poem poem ;
+
+    private onPoemViewClickListener mListener ;
 
     public PoemView(Context context ){
         super(context);
@@ -38,36 +43,61 @@ public class PoemView extends RelativeLayout{
         mAuthorTv = (TextView)mPoemView.findViewById(R.id.poem_author);
         mDynastyTv = (TextView)mPoemView.findViewById(R.id.poem_dynasty);
         mContentTv = (TextView)mPoemView.findViewById(R.id.poem_content);
+
+        TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.PoemView);
+        //int contentLine = a.getInt(R.styleable.PoemView_contentLine);
+        a.recycle();
+
+        setListeners();
     }
 
     public void setPoem(Poem poem){
         this.poem = poem ;
-        setPoemTitle(poem.getTitle());
-        setPoemAuthor(poem.getAuthor());
-        setPoemDynasty(poem.getDynasty());
-        setPoemContent(poem.getContent());
+        mTitleTv.setText(poem.getTitle());
+        mAuthorTv.setText(poem.getAuthor());
+        mDynastyTv.setText(poem.getDynasty());
+        mContentTv.setText(StringUtils.splitContent(poem.getContent()));
     }
 
-    public void setPoemTitle(String title ){
-        mTitleTv.setText(title);
+    @Override
+    public void onClick(View v) {
+        if(mListener == null){
+            return;
+        }
+        switch (v.getId()){
+            case R.id.poem_title:
+                mListener.onTitleClick();
+                break;
+            case R.id.poem_author:
+                mListener.onAuthorClick();
+                break;
+            case R.id.poem_dynasty:
+                mListener.onDynastyClick();
+                break;
+            case R.id.poem_content:
+                mListener.onContentClick();
+                break;
+        }
     }
 
-    public void setPoemAuthor(String author){
-        mAuthorTv.setText(author);
-    }
-
-    public void setPoemDynasty(String dynasty){
-        mDynastyTv.setText(dynasty);
+    private void setListeners(){
+        mTitleTv.setOnClickListener(this);
+        mAuthorTv.setOnClickListener(this);
+        mContentTv.setOnClickListener(this);
+        mDynastyTv.setOnClickListener(this);
     }
 
     /**
-     * content will be split and space will be get ride.
-     * @param content
+     * Listener click on the poemview.
      */
-    public void setPoemContent(String content){
-        //split content.
-        mContentTv.setText(StringUtils.splitContent(content));
+    public interface onPoemViewClickListener{
+        void onTitleClick();
+        void onAuthorClick();
+        void onDynastyClick();
+        void onContentClick();
     }
 
-
+    public void setOnPoemViewClickListener(onPoemViewClickListener listener){
+        this.mListener = listener;
+    }
 }

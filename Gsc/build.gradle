@@ -28,4 +28,7 @@ dependencies {
     compile 'com.android.support:design:23.3.0'
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'com.alibaba:fastjson:1.1.51.android'
+
+    compile 'com.github.orhanobut:logger:1.12'
+
 }

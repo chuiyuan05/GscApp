@@ -62,10 +62,7 @@ public class RecommendFragment extends BaseFragment {
                 Log.d(TAG, "response:"+response) ;
                 //main thread
                 Poem poem = JSON.parseObject(response, Poem.class);
-                mPoemView.setPoemTitle(getString(R.string.jiangjinjiu_title));
-                mPoemView.setPoemAuthor(getString(R.string.jiangjinjiu_author));
-                mPoemView.setPoemDynasty(getString(R.string.jiangjinjiu_dynasty));
-                mPoemView.setPoemContent(getString(R.string.jiangjinjiu_content));
+                mPoemView.setPoem(poem);
                 Log.d(TAG, poem.toString()) ;
                 hideWaitDialog();
             }

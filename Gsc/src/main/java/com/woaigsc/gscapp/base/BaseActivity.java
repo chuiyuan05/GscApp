@@ -23,11 +23,18 @@ public class BaseActivity extends AppCompatActivity implements DialogControl {
     private ProgressDialog waitDialog ;
 
     @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppManager.getInstance().addActivity(this);
         waitDialogVisible = true ;
     }
+
+
 
     @Override
     protected void onDestroy() {

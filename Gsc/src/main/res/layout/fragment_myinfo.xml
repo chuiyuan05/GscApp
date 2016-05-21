@@ -2,11 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.woaigsc.mylib.heros.widget.MyViewGroupA
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_bright">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="myinfo"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal" />
+        <com.woaigsc.mylib.heros.widget.MyViewGroupB
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@android:color/holo_green_dark">
+
+            <com.woaigsc.mylib.heros.widget.MyView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@android:color/darker_gray" />
+
+        </com.woaigsc.mylib.heros.widget.MyViewGroupB>
+
+    </com.woaigsc.mylib.heros.widget.MyViewGroupA>
+
 </LinearLayout>

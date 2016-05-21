@@ -3,6 +3,7 @@ package com.woaigsc.gscapp.ui;
 import android.support.v4.app.Fragment;
 
 import com.woaigsc.gscapp.R;
+import com.woaigsc.gscapp.fragment.AllFragment;
 import com.woaigsc.gscapp.fragment.CategoryFragment;
 import com.woaigsc.gscapp.fragment.MyInfoFragment;
 import com.woaigsc.gscapp.fragment.RecommendFragment;
@@ -13,6 +14,7 @@ import com.woaigsc.gscapp.fragment.RecommendFragment;
 public enum  MainTab{
     RECOMAND(1,R.string.recommend,R.drawable.icon, RecommendFragment.newInstance()),
     CATEGORY(2,R.string.category,R.drawable.icon, CategoryFragment.newInstance()),
+    ALL(3,R.string.all, R.drawable.icon, AllFragment.newInstance()),
     MYINFO(4, R.string.myinfo,R.drawable.icon, MyInfoFragment.newInstance());
 
     private int index ;

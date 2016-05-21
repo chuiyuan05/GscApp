@@ -7,9 +7,11 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.widget.TextView;
 
 import com.woaigsc.gscapp.base.BaseActivity;
 import com.woaigsc.gscapp.app.AppManager;
+import com.woaigsc.mylib.utils.FontHelper;
 
 /**
  * Created by chuiyuan on 16-5-5.
@@ -20,6 +22,8 @@ public class AppStart extends BaseActivity{
         super.onCreate(savedInstanceState);
         final View view = View.inflate(this, R.layout.activity_appstart, null);
         setContentView(view);
+        TextView appNameTv = (TextView)findViewById(R.id.gsc_appname);
+        FontHelper.getInstance(this).setDefaultFont(appNameTv);
 
         AlphaAnimation alphaAnimation= new AlphaAnimation(0.5f,1.0f);
         alphaAnimation.setDuration(800);

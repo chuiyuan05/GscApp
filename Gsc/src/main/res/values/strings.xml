@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">诗阙</string>
 
-    <string name="recommend">tuijian</string>
-    <string name="category">fenlei</string>
-    <string name="myinfo">wode</string>
+    <string name="recommend">推荐</string>
+    <string name="category">分类</string>
+    <string name="all">所有</string>
+    <string name="myinfo">我</string>
     <string name="tip_double_click_exit">再次点击退出</string>
     <string name="gsc_loading">loading...</string>
 

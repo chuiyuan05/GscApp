@@ -10,9 +10,6 @@ import android.view.animation.Animation;
 
 import com.woaigsc.gscapp.base.BaseActivity;
 import com.woaigsc.gscapp.app.AppManager;
-import com.woaigsc.mylib.designpattern.mvp.evenbus.EventBusActivity;
-import com.woaigsc.mylib.designpattern.mvp.login.LoginActivity;
-import com.woaigsc.mylib.designpattern.mvp.outeradapter.AdapterActivityA;
 
 /**
  * Created by chuiyuan on 16-5-5.
@@ -50,7 +47,7 @@ public class AppStart extends BaseActivity{
      */
     private void redirectTo(){
         //for study
-        Intent intent = new Intent(this, EventBusActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         AppManager.getInstance().finishActivity(AppStart.class);
     }

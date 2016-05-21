@@ -1,7 +1,9 @@
 package com.woaigsc.gscapp.widget;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.content.res.TypedArray;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +31,8 @@ public class PoemView extends RelativeLayout
 
     private onPoemViewClickListener mListener ;
 
+    private Context context ;
+
     public PoemView(Context context ){
         super(context);
     }
@@ -38,7 +42,7 @@ public class PoemView extends RelativeLayout
         LayoutInflater mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mPoemView = (RelativeLayout)mInflater.inflate(R.layout.poem_view, null);
         this.addView(mPoemView);
-
+        this.context = context ;
         mTitleTv = (TextView)mPoemView.findViewById(R.id.poem_title);
         mAuthorTv = (TextView)mPoemView.findViewById(R.id.poem_author);
         mDynastyTv = (TextView)mPoemView.findViewById(R.id.poem_dynasty);
@@ -52,11 +56,20 @@ public class PoemView extends RelativeLayout
     }
 
     public void setPoem(Poem poem){
+        AssetManager assetManager = context.getAssets();
+        Typeface tf = Typeface.createFromAsset(assetManager,
+                "fonts/zhongqiliqiang.ttf");
+
         this.poem = poem ;
         mTitleTv.setText(poem.getTitle());
+        mTitleTv.setTypeface(tf);
+        mTitleTv.getPaint().setFakeBoldText(true);
         mAuthorTv.setText(poem.getAuthor());
+        mAuthorTv.setTypeface(tf);
         mDynastyTv.setText(poem.getDynasty());
+        mDynastyTv.setTypeface(tf);
         mContentTv.setText(StringUtils.splitContent(poem.getContent()));
+        mContentTv.setTypeface(tf);
     }
 
     @Override

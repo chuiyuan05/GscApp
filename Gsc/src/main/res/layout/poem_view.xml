@@ -12,22 +12,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/poem_title" />
+            android:id="@+id/poem_title"
+            android:textSize="18sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/poem_dynasty" />
+            android:id="@+id/poem_dynasty"
+            android:textSize="18sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/poem_author" />
+            android:id="@+id/poem_author"
+            android:textSize="18sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:id="@+id/poem_content" />
+            android:id="@+id/poem_content"
+            android:textSize="18sp"/>
     </LinearLayout>
 </RelativeLayout>
